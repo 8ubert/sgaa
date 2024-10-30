@@ -1,2 +1,2 @@
-# sgaa
-Sistema de Gestão de Agendamento de Aulas
+Iniciar a aplicação:
+- python.exe .\app.py

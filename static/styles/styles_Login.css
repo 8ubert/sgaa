@@ -1,0 +1,261 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+input {
+    font-size: 0.9em;
+    width: 94%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#noLoginHint, #changePasswordHint {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 10px;
+}
+
+#userTypeSelection {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#userTypeSelection button {
+    width: 80%;
+    padding: 19px;
+    margin: 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    transition: border 0.10s ease;
+    cursor: pointer;
+}
+
+#userTypeSelection button:hover {
+    background-color: #256e36;
+}
+
+/* Para personalizar criação de conta */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+	border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-type-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; 
+}
+
+.account-type-selection button {
+    padding: auto;
+    margin: auto;
+    cursor: pointer;
+    width: auto;
+}
+
+input {
+    font-size: 0.9em;
+    width: 94%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selected {
+    background-color: #256e36;
+    color: white;
+    border: 1px solid #1e4d2b;
+}
+
+.qualification-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.qualification-fields input {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#addQualification {
+    cursor: pointer;
+    color: blue;
+}
+
+#noLoginHint, #changePasswordHint {
+    text-decoration: none;
+}
+
+/* Estilos para o modal de verificação */
+.verification-modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.verification-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.verification-code-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.verification-code-input {
+    width: 15%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#proceedButton {
+    background: #007bff;
+}
+
+#proceedButton:hover {
+    background: #0056b3;
+}
+
+#proceedButton:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1000; /* Garantir que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita o scroll se necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Largura do modal */
+    border-radius: 10px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.modal-content input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.confirmResetButton {
+    padding: 10px 20px;
+	width: 50%;
+    background-color: #28a745; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+	margin: 10px;
+	left: 0;
+    top: 0;
+    cursor: pointer;
+	
+}
+
+button:hover {
+    background-color: #218838; /* Cor ao passar o mouse */
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+}

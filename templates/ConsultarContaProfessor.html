@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_ConsultarContaProfessor.css') }}">
+    <!-- <link rel="stylesheet" href="../static/styles/styles_ConsultarContaProfessor.css"> -->
+
+    <title>SGAA</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../static/img/logo.png" alt="logo" class="logo">
+            <div class="user-info">
+                <div class="config-button">
+				<img src="../static/img/configurações.png" alt="Configurações" class="settings-icon" onclick="toggleMenu()">
+				<div id="config-menu" class="config-menu">
+					<button onclick="agendamentos()">Seus agendamentos</button>
+					<button onclick="disponibilidades()">Suas disponibilidades</button> <!-- apenas para professores -->
+					<button onclick="turmas()">Suas turmas</button> <!-- apenas para unidades -->
+					<button onclick="account()">Sua conta</button>
+                    <button onclick="logout()">Sair</button>
+				</div>
+			</div>
+            </div>
+        </header>
+        <h2>Sua conta </h2>
+        <div id="accountInfo">
+            <p><strong>Nome Completo: </strong> <span id="nome">{{ user.Nome }}</span></p>
+            <p><strong>CPF: </strong> <span id="cpf">{{ professor.CPF }}</span></p>
+            <p><strong>CNPJ: </strong> <span id="cnpj">{{ user.CNPJ }}</span></p>
+            <h4>Endereço:</h4>
+            <p><strong>CEP: </strong> <span id="cep">{{ cep.Valor }}</span></p>
+            <p><strong>Número: </strong> <span id="numero">{{ user.NumeroEndereco }}</span></p>
+            <h4>Contato:</h4>
+            <div id="extraEmails">
+                <p><strong>Email: </strong> <span id="email"></span></p>
+            </div>
+            <div id="extraPhones" class="phones-fields">
+                <p><strong>DDD: </strong> <span id="ddd"></span></p>
+                <p><strong>Telefone: </strong> <span id="telefone"></span></p>
+            </div>
+            <h4>Qualificações:</h4>
+            <div id="qualificacoesContainer" class="qualification-fields">
+                <p><strong>Idioma: </strong> <span id="idioma"></span></p>
+                <p><strong>Proficiência: </strong> <span id="proficiencia"></span></p>
+            </div>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/script_ConsultarContaProfessor.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Function_formatarCNPJ.js') }}"></script>
+    
+    <!-- <script src="../static/js/script_ConsultarContaProfessor.js"></script>
+    <script src="../static/js/Function_formatarCNPJ.js"></script> -->
+
+</body>
+</html>

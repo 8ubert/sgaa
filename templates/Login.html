@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_Login.css') }}">
+    <title>SGAA</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao SGAA!</h1>
+        <!-- Formulário de login -->
+        <form id="loginForm" action="{{ url_for('auth.login') }}" method="post">
+            <input type="text" id="cnpj" name="cnpj" placeholder="Insira seu CNPJ" required maxlength="18">
+            <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+            <button type="submit">Entrar</button>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="error-messages">
+                        {% for message in messages %}
+                            <div class="error-message">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <!-- Links para criar conta e alterar senha -->
+            <p id="noLoginHint">Não tem conta? <a href="#" onclick="window.location.href='/auth/create_user'">Clique aqui!</a>.</p>
+            <p id="changePasswordHint">Esqueceu a senha? <a href="#" onclick="window.location.href='/auth/forgot_password'">Clique aqui!</a>.</p>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script_Login.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Function_formatarCNPJ.js') }}"></script>
+</body>
+</html>

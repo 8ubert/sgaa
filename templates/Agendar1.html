@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SGAA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_Agendar1.css') }}">
+    <!-- <link rel="stylesheet" href="../static/styles/styles_Agendar1.css"> -->
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                <span id="user-name">{{ current_user.Nome }}</span>
+                <div class="config-button">
+				<img src="../static/img/configurações.png" alt="Configurações" class="settings-icon" onclick="toggleMenu()">
+				<div id="config-menu" class="config-menu">
+					<button onclick="agendamentos()">Seus agendamentos</button>
+					<button onclick="disponibilidades()">Suas disponibilidades</button> <!-- apenas para professores -->
+					<button onclick="turmas()">Suas turmas</button> <!-- apenas para unidades -->
+					<button onclick="account()">Sua conta</button>
+                    <button onclick="logout()">Sair</button>
+				</div>
+			</div>
+            </div>
+        </header>
+
+        <main>
+            <h2>Agendamento</h2>
+            <input type="text" id="professor" placeholder="CPF ou CNPJ do professor" class="input-field">
+            
+            <div class="dropdowns">
+                <div class="dropdown">
+                    <label for="idioma">Língua<span class="required">*</span></label>
+                    <!-- é aqui que será mudado para implementar back-end -->
+                    <select id="idioma">
+                        <option>Inglês</option>
+                        <option>Japonês</option>
+                        <option>Espanhol</option>
+                        <option>Francês</option>
+                        {% for idioma in idiomas %}
+                            <option value="{{ idioma }}">{{ idioma }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="nivel">Nível<span class="required">*</span></label>
+                    <!-- é aqui que será mudado para implementar back-end -->
+                    <select id="nivel">
+                        <option>Iniciante</option>
+                        <option>Intermediário</option>
+                        <option>Avançado</option>
+                        {% for nivel in niveis %}
+                            <option value="{{ nivel }}">{{ nivel }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <label for="tempo">Tempo<span class="required">*</span></label>
+                <!-- é aqui que será mudado para implementar back-end -->
+                <select id="tempo">
+                    <option>1 hora</option>
+                    <option>2 horas</option>
+                    <option>3 horas</option>
+                </select>
+            </div>
+            
+            <button id="buscar-button">Buscar</button>
+            
+            <div id="resultado-pesquisa" class="resultado-pesquisa">
+                <!-- O perfil do professor que corresponde a busca vai estar aqui -->
+            </div>
+
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script_Agendar1.js') }}"></script>
+    <!-- <script src="../static/js/script_Agendar1.js"></script> -->
+</body>
+</html>

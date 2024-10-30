@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SGAA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_MenuAgendamentos.css') }}">
+    <!-- <link rel="stylesheet" href="../static/styles/styles_MenuAgendamentos.css"> -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                <span id="user-name">{{ current_user.Nome }}</span>
+                <div class="config-button">
+				<img src="../static/img/configurações.png" alt="Configurações" class="settings-icon" onclick="toggleMenu()">
+				<div id="config-menu" class="config-menu">
+					<button onclick="agendamentos()">Seus agendamentos</button>
+					<button onclick="disponibilidades()">Suas disponibilidades</button> <!-- apenas para professores -->
+					<button onclick="turmas()">Suas turmas</button> <!-- apenas para unidades -->
+					<button onclick="account()">Sua conta</button>
+                    <button onclick="logout()">Sair</button>
+				</div>
+			</div>
+            </div>
+        </header>
+
+        <main>
+            <h2>Agendamentos</h2>
+            <div class="calendario">
+                Os agendamentos ficam localizados aqui.
+            </div>
+
+            <!-- Calendário Mensal 
+            <div id="monthly-calendar" class="calendar">
+                <div class="calendar-header">
+                    <button class="prev">&lt;</button>
+                    <span id="month-label">Janeiro</span>
+                    <button class="next">&gt;</button>
+                </div>
+                <div class="calendar-body">
+                  
+                    <div class="calendar-grid">
+                        
+                        <div class="day">
+                            <span>1</span>
+                            <div class="appointment">Agendamento 1</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendário Semanal 
+            <div id="weekly-calendar" class="calendar hidden">
+                <div class="calendar-header">
+                    <button class="prev">&lt;</button>
+                    <span id="week-label">Semana Atual</span>
+                    <button class="next">&gt;</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="day">
+                        <span>Segunda</span>
+                        <div class="appointment">Agendamento 1</div>
+                    </div>
+                    
+                </div>
+            </div> -->
+
+            <div class="schedule-button">
+                <button id="schedule-button" onclick=agendar1()>Agendar</button>
+            </div>
+
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/script_MenuAgendamentos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Function_formatarCNPJ.js') }}"></script>
+    
+    <!-- <script src="../static/js/script_MenuAgendamentos.js"></script> -->
+
+</body>
+</html>

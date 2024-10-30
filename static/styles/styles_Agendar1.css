@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dae2ed;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 60px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.settings-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.input-field {
+    width: 96%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.dropdown {
+    width: 48%;
+}
+
+.dropdown label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#buscar-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #7296c4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#buscar-button:hover {
+    background-color: #455e80;
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+}
+
+.config-button {
+    position: relative;
+    display: inline-block;
+	cursor: pointer;
+}
+
+.config-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+	width: 150px;
+}
+
+.config-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.config-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+.resultado-pesquisa {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.perfil-professor {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.perfil-professor:hover {
+    background-color: #d4d4d4;
+}
